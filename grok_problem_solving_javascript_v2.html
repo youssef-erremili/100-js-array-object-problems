@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grok problem solving javascript v2</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <script src="SumofArrayElements.js"></script>
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="problem-1-sum-of-array-elements">Problem 1: Sum of Array Elements</h2>
+<p><strong>Description:</strong> Given an array of integers representing daily temperatures, compute the sum to find the total heat index for the week.<br>
+<strong>Input:</strong> An array of integers (e.g., [1, 2, 3]), length 1 to 50.<br>
+<strong>Output:</strong> An integer sum (e.g., 6).</p>
+<h2 id="problem-2-find-maximum-in-array">Problem 2: Find Maximum in Array</h2>
+<p><strong>Description:</strong> From an array of stock prices, find the maximum value to identify the peak selling point.<br>
+<strong>Input:</strong> An array of positive integers (e.g., [10, 20, 15]), length 1 to 100.<br>
+<strong>Output:</strong> The maximum integer (e.g., 20).</p>
+<h2 id="problem-3-access-object-value">Problem 3: Access Object Value</h2>
+<p><strong>Description:</strong> Given an object representing user info, retrieve the value for a given key like fetching a username.<br>
+<strong>Input:</strong> An object (e.g., {name: “Alice”, age: 30}) and a key string (e.g., “name”).<br>
+<strong>Output:</strong> The value (e.g., “Alice”) or undefined if not found.</p>
+<h2 id="problem-4-array-length-check">Problem 4: Array Length Check</h2>
+<p><strong>Description:</strong> Check if an array of tasks is empty to determine if a to-do list is complete.<br>
+<strong>Input:</strong> An array (e.g., [] or [1, 2]).<br>
+<strong>Output:</strong> A boolean: true if empty, false otherwise.</p>
+<h2 id="problem-5-add-key-to-object">Problem 5: Add Key to Object</h2>
+<p><strong>Description:</strong> Add a new property to an object representing a product, such as adding a category.<br>
+<strong>Input:</strong> An object (e.g., {price: 100}) and key-value pair (e.g., “category”, “electronics”).<br>
+<strong>Output:</strong> Updated object (e.g., {price: 100, category: “electronics”}).</p>
+<h2 id="problem-6-reverse-array">Problem 6: Reverse Array</h2>
+<p><strong>Description:</strong> Reverse an array of log entries to show the most recent first.<br>
+<strong>Input:</strong> An array (e.g., [1, 2, 3]), length 1 to 50.<br>
+<strong>Output:</strong> Reversed array (e.g., [3, 2, 1]).</p>
+<h2 id="problem-7-check-object-key-existence">Problem 7: Check Object Key Existence</h2>
+<p><strong>Description:</strong> Verify if a key exists in an object to check for required fields in form data.<br>
+<strong>Input:</strong> An object (e.g., {email: <a href="mailto:%22test@example.com">"test@example.com</a>"}) and key (e.g., “email”).<br>
+<strong>Output:</strong> A boolean (e.g., true).</p>
+<h2 id="problem-8-concatenate-arrays">Problem 8: Concatenate Arrays</h2>
+<p><strong>Description:</strong> Combine two arrays of user IDs from different groups into one.<br>
+<strong>Input:</strong> Two arrays (e.g., [1, 2], [3, 4]).<br>
+<strong>Output:</strong> A single array (e.g., [1, 2, 3, 4]).</p>
+<h2 id="problem-9-get-object-keys">Problem 9: Get Object Keys</h2>
+<p><strong>Description:</strong> Retrieve all keys from an object to list available settings in a config.<br>
+<strong>Input:</strong> An object (e.g., {a: 1, b: 2}).<br>
+<strong>Output:</strong> Array of keys (e.g., [“a”, “b”]).</p>
+<h2 id="problem-10-slice-array">Problem 10: Slice Array</h2>
+<p><strong>Description:</strong> Extract a portion of an array representing paginated results.<br>
+<strong>Input:</strong> An array (e.g., [1, 2, 3, 4, 5]), start and end indices (e.g., 1, 3).<br>
+<strong>Output:</strong> Sliced array (e.g., [2, 3]).</p>
+<h2 id="problem-11-remove-duplicates-from-array">Problem 11: Remove Duplicates from Array</h2>
+<p><strong>Description:</strong> Remove duplicate values from an array of tags to unique them for a blog post.<br>
+<strong>Input:</strong> An array (e.g., [1, 2, 2, 3]), length up to 100.<br>
+<strong>Output:</strong> Array without duplicates (e.g., [1, 2, 3]).</p>
+<h2 id="problem-12-merge-two-objects">Problem 12: Merge Two Objects</h2>
+<p><strong>Description:</strong> Merge properties from two objects, overwriting duplicates, for combining user defaults and overrides.<br>
+<strong>Input:</strong> Two objects (e.g., {a: 1}, {b: 2, a: 3}).<br>
+<strong>Output:</strong> Merged object (e.g., {a: 3, b: 2}).</p>
+<h2 id="problem-13-filter-array-by-condition">Problem 13: Filter Array by Condition</h2>
+<p><strong>Description:</strong> Filter an array of numbers to keep only even ones, like selecting even transaction amounts.<br>
+<strong>Input:</strong> An array of integers (e.g., [1, 2, 3, 4]).<br>
+<strong>Output:</strong> Filtered array (e.g., [2, 4]).</p>
+<h2 id="problem-14-sort-array-ascending">Problem 14: Sort Array Ascending</h2>
+<p><strong>Description:</strong> Sort an array of scores in ascending order for ranking players.<br>
+<strong>Input:</strong> An array of numbers (e.g., [3, 1, 2]).<br>
+<strong>Output:</strong> Sorted array (e.g., [1, 2, 3]).</p>
+<h2 id="problem-15-map-array-to-new-values">Problem 15: Map Array to New Values</h2>
+<p><strong>Description:</strong> Map an array of radii to areas (pi * r^2) for circle calculations.<br>
+<strong>Input:</strong> An array of numbers (e.g., [1, 2]).<br>
+<strong>Output:</strong> Mapped array (e.g., [3.14, 12.56], approx).</p>
+<h2 id="problem-16-deep-copy-object">Problem 16: Deep Copy Object</h2>
+<p><strong>Description:</strong> Create a deep copy of a nested object to avoid mutating original config data.<br>
+<strong>Input:</strong> Nested object (e.g., {user: {name: “Bob”}}).<br>
+<strong>Output:</strong> Independent copy.</p>
+<h2 id="problem-17-find-index-in-array">Problem 17: Find Index in Array</h2>
+<p><strong>Description:</strong> Find the index of a target value in an array, like locating a product ID.<br>
+<strong>Input:</strong> Array (e.g., [10, 20, 30]), target (e.g., 20).<br>
+<strong>Output:</strong> Index or -1 (e.g., 1).</p>
+<h2 id="problem-18-reduce-array-to-single-value">Problem 18: Reduce Array to Single Value</h2>
+<p><strong>Description:</strong> Use reduce to find the product of array elements for factorial-like computations.<br>
+<strong>Input:</strong> Array of positives (e.g., [1, 2, 3]).<br>
+<strong>Output:</strong> Product (e.g., 6).</p>
+<h2 id="problem-19-flatten-nested-array">Problem 19: Flatten Nested Array</h2>
+<p><strong>Description:</strong> Flatten a multi-level array of categories into one level for search indexing.<br>
+<strong>Input:</strong> Nested array (e.g., [1, [2, [3]]]).<br>
+<strong>Output:</strong> Flat array (e.g., [1, 2, 3]).</p>
+<h2 id="problem-20-invert-object-keys-and-values">Problem 20: Invert Object Keys and Values</h2>
+<p><strong>Description:</strong> Swap keys and values in an object for reverse lookup in mappings.<br>
+<strong>Input:</strong> Object with unique values (e.g., {a: 1, b: 2}).<br>
+<strong>Output:</strong> Inverted (e.g., {1: “a”, 2: “b”}).</p>
+<h2 id="problem-21-merge-sorted-arrays">Problem 21: Merge Sorted Arrays</h2>
+<p><strong>Description:</strong> Merge two sorted arrays into one sorted array for combining ordered logs.<br>
+<strong>Input:</strong> Two sorted arrays (e.g., [1, 3], [2, 4]).<br>
+<strong>Output:</strong> Merged sorted (e.g., [1, 2, 3, 4]).</p>
+<h2 id="problem-22-group-array-by-key">Problem 22: Group Array by Key</h2>
+<p><strong>Description:</strong> Group an array of objects by a property, like grouping sales by region.<br>
+<strong>Input:</strong> Array of objects (e.g., [{region: “N”, val: 10}, {region: “S”, val: 20}]).<br>
+<strong>Output:</strong> Object of arrays (e.g., {N: […], S: […]}).</p>
+<h2 id="problem-23-rotate-array">Problem 23: Rotate Array</h2>
+<p><strong>Description:</strong> Rotate an array by k steps to the right for cyclic shifting in queues.<br>
+<strong>Input:</strong> Array (e.g., [1, 2, 3]), k (e.g., 1).<br>
+<strong>Output:</strong> Rotated (e.g., [3, 1, 2]).</p>
+<h2 id="problem-24-update-nested-object-value">Problem 24: Update Nested Object Value</h2>
+<p><strong>Description:</strong> Update a value in a deeply nested object without mutating originals.<br>
+<strong>Input:</strong> Object (e.g., {a: {b: 1}}), path ([“a”, “b”]), new value (2).<br>
+<strong>Output:</strong> Updated object (e.g., {a: {b: 2}}).</p>
+<h2 id="problem-25-intersection-of-two-arrays">Problem 25: Intersection of Two Arrays</h2>
+<p><strong>Description:</strong> Find common elements between two arrays for shared interests in recommendations.<br>
+<strong>Input:</strong> Two arrays (e.g., [1, 2, 3], [2, 3, 4]).<br>
+<strong>Output:</strong> Intersection array (e.g., [2, 3]).</p>
+<h2 id="problem-26-chunk-array">Problem 26: Chunk Array</h2>
+<p><strong>Description:</strong> Divide an array into chunks of size n for batch processing uploads.<br>
+<strong>Input:</strong> Array (e.g., [1,2,3,4,5]), n (2).<br>
+<strong>Output:</strong> Array of chunks (e.g., [[1,2],[3,4],[5]]).</p>
+<h2 id="problem-27-binary-search-in-sorted-array">Problem 27: Binary Search in Sorted Array</h2>
+<p><strong>Description:</strong> Perform binary search to find a target in a sorted array of IDs.<br>
+<strong>Input:</strong> Sorted array (e.g., [1,2,3,4]), target (3).<br>
+<strong>Output:</strong> Index or -1 (e.g., 2).</p>
+<h2 id="problem-28-pick-properties-from-object">Problem 28: Pick Properties from Object</h2>
+<p><strong>Description:</strong> Extract specific keys from an object for selective data transfer.<br>
+<strong>Input:</strong> Object (e.g., {a:1, b:2, c:3}), keys ([“a”,“c”]).<br>
+<strong>Output:</strong> New object (e.g., {a:1, c:3}).</p>
+<h2 id="problem-29-partition-array">Problem 29: Partition Array</h2>
+<p><strong>Description:</strong> Partition array into two based on a predicate, like separating positives and negatives.<br>
+<strong>Input:</strong> Array (e.g., [-1,1,-2,2]), predicate (x &gt; 0).<br>
+<strong>Output:</strong> Two arrays (e.g., [[1,2], [-1,-2]]).</p>
+<h2 id="problem-30-omit-properties-from-object">Problem 30: Omit Properties from Object</h2>
+<p><strong>Description:</strong> Remove specific keys from an object for data sanitization.<br>
+<strong>Input:</strong> Object (e.g., {a:1, b:2}), keys ([“b”]).<br>
+<strong>Output:</strong> New object (e.g., {a:1}).</p>
+<h2 id="problem-31-move-zeros-to-end">Problem 31: Move Zeros to End</h2>
+<p><strong>Description:</strong> Move all zeros in an array to the end while preserving order for data normalization.<br>
+<strong>Input:</strong> Array (e.g., [0,1,0,3]).<br>
+<strong>Output:</strong> [1,3,0,0].</p>
+<h2 id="problem-32-deep-merge-objects">Problem 32: Deep Merge Objects</h2>
+<p><strong>Description:</strong> Merge two nested objects recursively for config overriding.<br>
+<strong>Input:</strong> Two objects (e.g., {a: {b:1}}, {a: {c:2}}).<br>
+<strong>Output:</strong> {a: {b:1, c:2}}.</p>
+<h2 id="problem-33-product-of-array-except-self">Problem 33: Product of Array Except Self</h2>
+<p><strong>Description:</strong> For each element, compute product of all others without division for efficient stats.<br>
+<strong>Input:</strong> Array (e.g., [1,2,3,4]).<br>
+<strong>Output:</strong> [24,12,8,6].</p>
+<h2 id="problem-34-flatten-object">Problem 34: Flatten Object</h2>
+<p><strong>Description:</strong> Flatten nested object to single level with dot notation keys.<br>
+<strong>Input:</strong> {a: {b:1}}.<br>
+<strong>Output:</strong> {“a.b”:1}.</p>
+<h2 id="problem-35-top-k-frequent-elements">Problem 35: Top K Frequent Elements</h2>
+<p><strong>Description:</strong> Find top k most frequent elements in an array for trend analysis.<br>
+<strong>Input:</strong> Array (e.g., [1,1,2,2,3]), k (2).<br>
+<strong>Output:</strong> [1,2].</p>
+<h2 id="problem-36-longest-increasing-subsequence">Problem 36: Longest Increasing Subsequence</h2>
+<p><strong>Description:</strong> Find length of longest increasing subsequence in array for sequence detection.<br>
+<strong>Input:</strong> [10,9,2,5,3,7].<br>
+<strong>Output:</strong> 3.</p>
+<h2 id="problem-37-merge-overlapping-intervals">Problem 37: Merge Overlapping Intervals</h2>
+<p><strong>Description:</strong> Merge overlapping intervals in array of pairs for scheduling.<br>
+<strong>Input:</strong> [[1,3],[2,4],[5,6]].<br>
+<strong>Output:</strong> [[1,4],[5,6]].</p>
+<h2 id="problem-38-kth-smallest-element">Problem 38: Kth Smallest Element</h2>
+<p><strong>Description:</strong> Find kth smallest in unsorted array for quick select in rankings.<br>
+<strong>Input:</strong> [3,1,4,2], k=2.<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-39-sliding-window-maximum">Problem 39: Sliding Window Maximum</h2>
+<p><strong>Description:</strong> Find max in each k-sized window of array for signal processing.<br>
+<strong>Input:</strong> [1,3,-1,3,5], k=3.<br>
+<strong>Output:</strong> [3,3,5].</p>
+<h2 id="problem-40-median-of-two-sorted-arrays">Problem 40: Median of Two Sorted Arrays</h2>
+<p><strong>Description:</strong> Find median of combined two sorted arrays for merged stats.<br>
+<strong>Input:</strong> [1,3], [2].<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-41-rotate-matrix">Problem 41: Rotate Matrix</h2>
+<p><strong>Description:</strong> Rotate 2D array (matrix) 90 degrees for image rotation.<br>
+<strong>Input:</strong> [[1,2],[3,4]].<br>
+<strong>Output:</strong> [[3,1],[4,2]].</p>
+<h2 id="problem-42-subarray-sum-equals-k">Problem 42: Subarray Sum Equals K</h2>
+<p><strong>Description:</strong> Find number of subarrays summing to k for transaction audits.<br>
+<strong>Input:</strong> [1,1,1], k=2.<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-43-next-greater-element">Problem 43: Next Greater Element</h2>
+<p><strong>Description:</strong> For each element, find next greater in array (circular).<br>
+<strong>Input:</strong> [1,2,1].<br>
+<strong>Output:</strong> [2,-1,2].</p>
+<h2 id="problem-44-trap-rain-water">Problem 44: Trap Rain Water</h2>
+<p><strong>Description:</strong> Compute trapped water in elevation array for terrain sim.<br>
+<strong>Input:</strong> [0,1,0,2,1,0,1,3,2,1,2,1].<br>
+<strong>Output:</strong> 6.</p>
+<h2 id="problem-45-longest-consecutive-sequence">Problem 45: Longest Consecutive Sequence</h2>
+<p><strong>Description:</strong> Find longest consecutive elements in unsorted array.<br>
+<strong>Input:</strong> [100,4,200,1,3,2].<br>
+<strong>Output:</strong> 4.</p>
+<h2 id="problem-46-word-break">Problem 46: Word Break</h2>
+<p><strong>Description:</strong> Check if string can be segmented into dictionary words (array of strings).<br>
+<strong>Input:</strong> “applepen”, [“apple”,“pen”].<br>
+<strong>Output:</strong> true.</p>
+<h2 id="problem-47-maximal-rectangle">Problem 47: Maximal Rectangle</h2>
+<p><strong>Description:</strong> Find largest rectangle area in binary matrix array.<br>
+<strong>Input:</strong> [[“1”,“0”],[“1”,“0”]].<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-48-stock-span">Problem 48: Stock Span</h2>
+<p><strong>Description:</strong> Compute span of stock prices (consecutive smaller or equal).<br>
+<strong>Input:</strong> [100,80,60,70,60,75,85].<br>
+<strong>Output:</strong> [1,1,1,2,1,4,6].</p>
+<h2 id="problem-49-lru-cache">Problem 49: LRU Cache</h2>
+<p><strong>Description:</strong> Implement LRU cache with get/set using objects and arrays.<br>
+<strong>Input:</strong> Capacity, operations.<br>
+<strong>Output:</strong> Cache behavior.</p>
+<h2 id="problem-50-clone-graph">Problem 50: Clone Graph</h2>
+<p><strong>Description:</strong> Deep clone a graph represented as adjacency list (array of objects).<br>
+<strong>Input:</strong> Graph nodes.<br>
+<strong>Output:</strong> Cloned graph.</p>
+<h2 id="problem-51-combination-sum">Problem 51: Combination Sum</h2>
+<p><strong>Description:</strong> Find combinations in array summing to target (with reuse).<br>
+<strong>Input:</strong> [2,3,6,7], 7.<br>
+<strong>Output:</strong> [[7],[2,2,3]].</p>
+<h2 id="problem-52-permutations-of-array">Problem 52: Permutations of Array</h2>
+<p><strong>Description:</strong> Generate all unique permutations of array elements.<br>
+<strong>Input:</strong> [1,2,3].<br>
+<strong>Output:</strong> [[1,2,3],[1,3,2],…].</p>
+<h2 id="problem-53-subsets-of-array">Problem 53: Subsets of Array</h2>
+<p><strong>Description:</strong> Generate all subsets (power set) of array.<br>
+<strong>Input:</strong> [1,2,3].<br>
+<strong>Output:</strong> [[],[1],[2],[1,2],…].</p>
+<h2 id="problem-54-course-schedule">Problem 54: Course Schedule</h2>
+<p><strong>Description:</strong> Detect cycle in prerequisites graph (array of pairs) for scheduling.<br>
+<strong>Input:</strong> Num courses, [[1,0]].<br>
+<strong>Output:</strong> Boolean feasible.</p>
+<h2 id="problem-55-number-of-islands">Problem 55: Number of Islands</h2>
+<p><strong>Description:</strong> Count islands in 2D grid array (‘1’ land, ‘0’ water).<br>
+<strong>Input:</strong> [[“1”,“1”],[“0”,“1”]].<br>
+<strong>Output:</strong> 1.</p>
+<h2 id="problem-56-minimum-path-sum">Problem 56: Minimum Path Sum</h2>
+<p><strong>Description:</strong> Find min sum path from top-left to bottom-right in grid array.<br>
+<strong>Input:</strong> [[1,3,1],[1,5,1],[4,2,1]].<br>
+<strong>Output:</strong> 7.</p>
+<h2 id="problem-57-unique-paths">Problem 57: Unique Paths</h2>
+<p><strong>Description:</strong> Count unique paths in m x n grid with obstacles (array).<br>
+<strong>Input:</strong> Obstacle grid.<br>
+<strong>Output:</strong> Path count.</p>
+<h2 id="problem-58-edit-distance">Problem 58: Edit Distance</h2>
+<p><strong>Description:</strong> Min operations to convert word1 to word2 (strings, but use arrays for DP).<br>
+<strong>Input:</strong> “horse”, “ros”.<br>
+<strong>Output:</strong> 3.</p>
+<h2 id="problem-59-longest-palindromic-subsequence">Problem 59: Longest Palindromic Subsequence</h2>
+<p><strong>Description:</strong> Find length of longest palindromic subsequence in array/string.<br>
+<strong>Input:</strong> “bbbab”.<br>
+<strong>Output:</strong> 4.</p>
+<h2 id="problem-60-house-robber">Problem 60: House Robber</h2>
+<p><strong>Description:</strong> Max amount rob from houses array without adjacent.<br>
+<strong>Input:</strong> [1,2,3,1].<br>
+<strong>Output:</strong> 4.</p>
+<h2 id="problem-61-coin-change">Problem 61: Coin Change</h2>
+<p><strong>Description:</strong> Min coins to make amount from coin array.<br>
+<strong>Input:</strong> [1,2,5], 11.<br>
+<strong>Output:</strong> 3.</p>
+<h2 id="problem-62-maximum-subarray">Problem 62: Maximum Subarray</h2>
+<p><strong>Description:</strong> Find contiguous subarray with max sum.<br>
+<strong>Input:</strong> [-2,1,-3,4,-1,2,1,-5,4].<br>
+<strong>Output:</strong> 6.</p>
+<h2 id="problem-63-jump-game">Problem 63: Jump Game</h2>
+<p><strong>Description:</strong> Can reach last index in array where each val is max jump.<br>
+<strong>Input:</strong> [2,3,1,1,4].<br>
+<strong>Output:</strong> true.</p>
+<h2 id="problem-64-sort-colors">Problem 64: Sort Colors</h2>
+<p><strong>Description:</strong> Sort array of 0,1,2 in-place (Dutch flag).<br>
+<strong>Input:</strong> [2,0,2,1,1,0].<br>
+<strong>Output:</strong> [0,0,1,1,2,2].</p>
+<h2 id="problem-65-search-in-rotated-sorted-array">Problem 65: Search in Rotated Sorted Array</h2>
+<p><strong>Description:</strong> Find target in rotated sorted array.<br>
+<strong>Input:</strong> [4,5,6,7,0,1,2], 0.<br>
+<strong>Output:</strong> 4.</p>
+<h2 id="problem-66-first-missing-positive">Problem 66: First Missing Positive</h2>
+<p><strong>Description:</strong> Find smallest missing positive integer in array.<br>
+<strong>Input:</strong> [3,4,-1,1].<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-67-set-matrix-zeroes">Problem 67: Set Matrix Zeroes</h2>
+<p><strong>Description:</strong> Set rows/cols to zero if element is zero in matrix.<br>
+<strong>Input:</strong> [[1,1,1],[1,0,1],[1,1,1]].<br>
+<strong>Output:</strong> Modified matrix.</p>
+<h2 id="problem-68-spiral-matrix">Problem 68: Spiral Matrix</h2>
+<p><strong>Description:</strong> Traverse matrix in spiral order to array.<br>
+<strong>Input:</strong> [[1,2,3],[4,5,6],[7,8,9]].<br>
+<strong>Output:</strong> [1,2,3,6,9,8,7,4,5].</p>
+<h2 id="problem-69-game-of-life">Problem 69: Game of Life</h2>
+<p><strong>Description:</strong> Update board array in-place for next state.<br>
+<strong>Input:</strong> Board grid.<br>
+<strong>Output:</strong> Updated board.</p>
+<h2 id="problem-70-word-search">Problem 70: Word Search</h2>
+<p><strong>Description:</strong> Find if word exists in grid array (adjacent letters).<br>
+<strong>Input:</strong> Grid, word.<br>
+<strong>Output:</strong> Boolean.</p>
+<h2 id="problem-71-n-queens">Problem 71: N-Queens</h2>
+<p><strong>Description:</strong> Place n queens on nxn board array without attacks.<br>
+<strong>Input:</strong> n=4.<br>
+<strong>Output:</strong> All solutions as arrays.</p>
+<h2 id="problem-72-sudoku-solver">Problem 72: Sudoku Solver</h2>
+<p><strong>Description:</strong> Solve 9x9 sudoku board array.<br>
+<strong>Input:</strong> Board with ‘.’ empty.<br>
+<strong>Output:</strong> Solved board.</p>
+<h2 id="problem-73-longest-valid-parentheses">Problem 73: Longest Valid Parentheses</h2>
+<p><strong>Description:</strong> Find longest valid substring length (use array/stack).<br>
+<strong>Input:</strong> “(()”.<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-74-implement-trie">Problem 74: Implement Trie</h2>
+<p><strong>Description:</strong> Build trie from array of words for prefix search.<br>
+<strong>Input:</strong> Words array.<br>
+<strong>Output:</strong> Trie object.</p>
+<h2 id="problem-75-lfu-cache">Problem 75: LFU Cache</h2>
+<p><strong>Description:</strong> Implement LFU cache with get/set using objects/arrays.<br>
+<strong>Input:</strong> Capacity, operations.<br>
+<strong>Output:</strong> Cache behavior.</p>
+<h2 id="problem-76-random-pick-index">Problem 76: Random Pick Index</h2>
+<p><strong>Description:</strong> Reservoir sampling for random index of target in array.<br>
+<strong>Input:</strong> Array, target.<br>
+<strong>Output:</strong> Random index.</p>
+<h2 id="problem-77-shuffle-array">Problem 77: Shuffle Array</h2>
+<p><strong>Description:</strong> Fisher-Yates shuffle for array.<br>
+<strong>Input:</strong> [1,2,3].<br>
+<strong>Output:</strong> Shuffled.</p>
+<h2 id="problem-78-min-stack">Problem 78: Min Stack</h2>
+<p><strong>Description:</strong> Stack with min operation using array.<br>
+<strong>Input:</strong> Operations.<br>
+<strong>Output:</strong> Min value.</p>
+<h2 id="problem-79-evaluate-reverse-polish-notation">Problem 79: Evaluate Reverse Polish Notation</h2>
+<p><strong>Description:</strong> Evaluate RPN array of tokens.<br>
+<strong>Input:</strong> [“2”,“1”,"+",“3”,"*"].<br>
+<strong>Output:</strong> 9.</p>
+<h2 id="problem-80-basic-calculator">Problem 80: Basic Calculator</h2>
+<p><strong>Description:</strong> Evaluate string expression with array/stack.<br>
+<strong>Input:</strong> “1 + 1”.<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-81-sliding-puzzle">Problem 81: Sliding Puzzle</h2>
+<p><strong>Description:</strong> Min moves to solve board array puzzle.<br>
+<strong>Input:</strong> [[1,2,3],[4,0,5]].<br>
+<strong>Output:</strong> Moves or -1.</p>
+<h2 id="problem-82-burst-balloons">Problem 82: Burst Balloons</h2>
+<p><strong>Description:</strong> Max coins from bursting balloon array.<br>
+<strong>Input:</strong> [3,1,5,8].<br>
+<strong>Output:</strong> 167.</p>
+<h2 id="problem-83-super-egg-drop">Problem 83: Super Egg Drop</h2>
+<p><strong>Description:</strong> Min drops to find critical floor with k eggs, n floors (DP array).<br>
+<strong>Input:</strong> k=1, n=2.<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-84-count-square-submatrices">Problem 84: Count Square Submatrices</h2>
+<p><strong>Description:</strong> Count square matrices with all ones in grid.<br>
+<strong>Input:</strong> [[0,1,1,1],[1,1,1,1],[0,1,1,1]].<br>
+<strong>Output:</strong> 15.</p>
+<h2 id="problem-85-maximal-square">Problem 85: Maximal Square</h2>
+<p><strong>Description:</strong> Largest square of '1’s in binary matrix.<br>
+<strong>Input:</strong> [[“1”,“0”],[“1”,“0”]].<br>
+<strong>Output:</strong> 1.</p>
+<h2 id="problem-86-cherry-pickup">Problem 86: Cherry Pickup</h2>
+<p><strong>Description:</strong> Max cherries in grid with two paths (3D DP).<br>
+<strong>Input:</strong> Grid array.<br>
+<strong>Output:</strong> Max cherries.</p>
+<h2 id="problem-87-dungeon-game">Problem 87: Dungeon Game</h2>
+<p><strong>Description:</strong> Min health to reach end in dungeon grid.<br>
+<strong>Input:</strong> [[-2,-3,3],[-5,-10,1],[10,30,-5]].<br>
+<strong>Output:</strong> 7.</p>
+<h2 id="problem-88-shortest-path-in-binary-matrix">Problem 88: Shortest Path in Binary Matrix</h2>
+<p><strong>Description:</strong> Shortest path in grid from top-left to bottom-right.<br>
+<strong>Input:</strong> [[0,1],[1,0]].<br>
+<strong>Output:</strong> 2.</p>
+<h2 id="problem-89-pacific-atlantic-water-flow">Problem 89: Pacific Atlantic Water Flow</h2>
+<p><strong>Description:</strong> Cells where water flows to both oceans in height matrix.<br>
+<strong>Input:</strong> Heights array.<br>
+<strong>Output:</strong> List of coordinates.</p>
+<h2 id="problem-90-network-delay-time">Problem 90: Network Delay Time</h2>
+<p><strong>Description:</strong> Max time for signal to all nodes in graph (array of edges).<br>
+<strong>Input:</strong> Times, n, k.<br>
+<strong>Output:</strong> Time or -1.</p>
+<h2 id="problem-91-cheapest-flights-within-k-stops">Problem 91: Cheapest Flights Within K Stops</h2>
+<p><strong>Description:</strong> Cheapest price from src to dst with &lt;=k stops (flights array).<br>
+<strong>Input:</strong> Flights, src, dst, k.<br>
+<strong>Output:</strong> Price or -1.</p>
+<h2 id="problem-92-reconstruct-itinerary">Problem 92: Reconstruct Itinerary</h2>
+<p><strong>Description:</strong> Eulerian path from tickets array.<br>
+<strong>Input:</strong> [[“JFK”,“SFO”],[“JFK”,“ATL”],…].<br>
+<strong>Output:</strong> Itinerary array.</p>
+<h2 id="problem-93-alien-dictionary">Problem 93: Alien Dictionary</h2>
+<p><strong>Description:</strong> Order of characters from words array.<br>
+<strong>Input:</strong> [“wrt”,“wrf”,“er”,“ett”,“rftt”].<br>
+<strong>Output:</strong> “wertf”.</p>
+<h2 id="problem-94-serialize-and-deserialize-binary-tree">Problem 94: Serialize and Deserialize Binary Tree</h2>
+<p><strong>Description:</strong> Serialize tree to string/array, deserialize back.<br>
+<strong>Input:</strong> Tree object.<br>
+<strong>Output:</strong> Serialized/deserialized.</p>
+<h2 id="problem-95-design-twitter">Problem 95: Design Twitter</h2>
+<p><strong>Description:</strong> Implement Twitter with post/get/follow using arrays/objects.<br>
+<strong>Input:</strong> Operations.<br>
+<strong>Output:</strong> Behaviors.</p>
+<h2 id="problem-96-insert-delete-getrandom-o1">Problem 96: Insert Delete GetRandom O(1)</h2>
+<p><strong>Description:</strong> Set with insert/remove/getRandom in O(1) using array/object.<br>
+<strong>Input:</strong> Operations.<br>
+<strong>Output:</strong> Results.</p>
+<h2 id="problem-97-all-possible-full-binary-trees">Problem 97: All Possible Full Binary Trees</h2>
+<p><strong>Description:</strong> Generate all full binary trees with n nodes (array of trees).<br>
+<strong>Input:</strong> n=7.<br>
+<strong>Output:</strong> List of tree objects.</p>
+<h2 id="problem-98-serialize-and-deserialize-n-ary-tree">Problem 98: Serialize and Deserialize N-ary Tree</h2>
+<p><strong>Description:</strong> Serialize/deserialize n-ary tree using arrays.<br>
+<strong>Input:</strong> Tree.<br>
+<strong>Output:</strong> Serialized/deserialized.</p>
+<h2 id="problem-99-design-underground-system">Problem 99: Design Underground System</h2>
+<p><strong>Description:</strong> Track average times between stations using objects/arrays.<br>
+<strong>Input:</strong> CheckIn/Out, getAverage.<br>
+<strong>Output:</strong> Averages.</p>
+<h2 id="problem-100-design-browser-history">Problem 100: Design Browser History</h2>
+<p><strong>Description:</strong> Implement browser history with visit/forward/back using arrays.<br>
+<strong>Input:</strong> Operations.<br>
+<strong>Output:</strong> Current URL.</p>
+</div>
+</body>
+
+</html>
