@@ -25,7 +25,7 @@ Variables: Scope management, transformations, and optimization techniques like m
 How to Use
 
 Clone the Repository:
-git clone <repository-url>
+git clone https://github.com/youssef-erremili/100-js-array-object-problems.git
 
 
 Navigate to a Problem:Each problem is documented with its description, input, and output requirements. You can find them listed in this README or in separate files (if implemented).
