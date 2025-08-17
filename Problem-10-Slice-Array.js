@@ -26,16 +26,18 @@ function sliceArray(arr, start = 0, end = arr.length - 1) {
     }
 
     // Solution 1: Built-in slicing using Array.slice()
-    let result = [];
-    result = arr.slice(start, end)
+    let resultOne = [];
+    resultOne = arr.slice(start, end)
+    console.log(resultOne);
 
     // Solution 2: Manual slicing using a for loop
+    let resultTwo = [];
     for (let i = start; i < end && i < arr.length; i++) {
-        result.push(arr[i])
+        resultTwo.push(arr[i])
     }
+    console.log(resultTwo);
 
-    console.log(result);
-    return result
+    return
 }
 
 
